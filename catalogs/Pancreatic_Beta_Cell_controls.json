@@ -1,0 +1,35 @@
+{
+  "positive": {
+    "markers_expected": [
+      "INS",
+      "IAPP",
+      "PDX1",
+      "NKX6-1",
+      "MAFA",
+      "PCSK1",
+      "CHGA",
+      "SCGN"
+    ],
+    "markers_found": [
+      "INS",
+      "IAPP"
+    ],
+    "n_found": 2,
+    "n_expected": 8,
+    "pass": true,
+    "top_marker_rank": 1
+  },
+  "negative_chromatin": {
+    "median_promoter_tau": 0.01809954751131222,
+    "median_promoter_breadth": 218.0,
+    "frac_below_specific_threshold": 1.0,
+    "threshold": 0.9,
+    "pass": true
+  },
+  "negative_expression": {
+    "median_expr_specificity": 0.039593887945214117,
+    "frac_below": 1.0,
+    "threshold": 0.3,
+    "pass": true
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "invocation_beta": "python run.py \"Pancreatic_Beta_Cell\"",
+  "invocation_enterocyte": "python run.py \"Small_Intestinal_Enterocyte\"",
+  "code_lines_changed_between_runs": 0,
+  "difference": "cell_type argument string only",
+  "beta_positive_markers": [
+    "INS",
+    "IAPP"
+  ],
+  "enterocyte_positive_markers": [
+    "OLFM4",
+    "APOA4",
+    "FABP6",
+    "PIGR"
+  ],
+  "beta_negative_pass": true,
+  "enterocyte_negative_pass": true
+}

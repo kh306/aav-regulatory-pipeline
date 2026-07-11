@@ -1,0 +1,8 @@
+numpy>=1.24
+pandas>=2.0
+scipy>=1.10
+matplotlib>=3.7
+biopython>=1.81
+pyarrow>=12.0
+cellxgene-census>=1.15
+requests>=2.31

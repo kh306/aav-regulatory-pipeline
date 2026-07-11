@@ -1,0 +1,37 @@
+{
+  "positive": {
+    "markers_expected": [
+      "OLFM4",
+      "APOA4",
+      "RBP2",
+      "FABP6",
+      "PIGR",
+      "ANPEP",
+      "VIL1",
+      "CDX2"
+    ],
+    "markers_found": [
+      "OLFM4",
+      "APOA4",
+      "FABP6",
+      "PIGR"
+    ],
+    "n_found": 4,
+    "n_expected": 8,
+    "pass": true,
+    "top_marker_rank": 1
+  },
+  "negative_chromatin": {
+    "median_promoter_tau": 0.01809954751131222,
+    "median_promoter_breadth": 218.0,
+    "frac_below_specific_threshold": 1.0,
+    "threshold": 0.9,
+    "pass": true
+  },
+  "negative_expression": {
+    "median_expr_specificity": 0.06225092848025633,
+    "frac_below": 1.0,
+    "threshold": 0.3,
+    "pass": true
+  }
+}
