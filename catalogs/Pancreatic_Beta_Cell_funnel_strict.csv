@@ -1,0 +1,7 @@
+stage,n,fold_reduction_vs_universe
+0_union_cCRE,1143424,1.0
+1_accessible_in_target,181897,6.286106972627366
+2_specific_tau>=0.9,82038,13.937736171042687
+3_candidate_blocks,73117,15.638278375753929
+4_size<=800bp,65101,17.56384694551543
+5_shortlist,25,45736.96

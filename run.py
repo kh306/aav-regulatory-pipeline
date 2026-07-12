@@ -58,7 +58,8 @@ def make_motif_scorer(cell_type):
     return lambda seqs: MO.motif_scores(seqs, tfs, pfm_dir, TC.TF_PFM)
 
 
-def run(cell_type, size_cap=800, top_n=25, tau_min=0.90, fetch_seqs=True):
+def run(cell_type, size_cap=800, top_n=25, tau_min=0.90, fetch_seqs=True,
+        link_max_dist=1_000_000, impute_unlinked=True, require_gene_link=False):
     bb = P.Backbone(data_dir=DATA)
     linker = P.NearestTSSLinker(os.path.join(DATA, "gene_tss.tsv"))
 
@@ -72,7 +73,10 @@ def run(cell_type, size_cap=800, top_n=25, tau_min=0.90, fetch_seqs=True):
     res = P.run_pipeline(cell_type, bb, linker=linker, gene_score=human_gs,
                          motif_scorer=make_motif_scorer(cell_type),
                          size_cap=size_cap, top_n=top_n, tau_min=tau_min,
-                         fetch_seqs=fetch_seqs, verbose=True)
+                         fetch_seqs=fetch_seqs, verbose=True,
+                         link_max_dist=link_max_dist,
+                         impute_unlinked=impute_unlinked,
+                         require_gene_link=require_gene_link)
 
     # Cross-species translatability filter (gene-level target-biology conservation)
     catalog = res["catalog"]
@@ -117,6 +121,17 @@ if __name__ == "__main__":
     ap.add_argument("--top-n", type=int, default=25)
     ap.add_argument("--tau-min", type=float, default=0.90)
     ap.add_argument("--no-seqs", action="store_true", help="skip hg38 sequence fetch")
+    ap.add_argument("--link-max-dist", type=int, default=1_000_000,
+                    help="max element-to-TSS distance (bp) counted as a gene link "
+                         "(default 1Mb; use 50000 for a defensible enhancer-range gate)")
+    ap.add_argument("--strict-links", action="store_true",
+                    help="honest mode: 50kb link gate, no 0.5 imputation, "
+                         "gene-linked candidates only in the ranked catalog")
     a = ap.parse_args()
-    run(a.cell_type, size_cap=a.size_cap, top_n=a.top_n, tau_min=a.tau_min,
-        fetch_seqs=not a.no_seqs)
+    if a.strict_links:
+        run(a.cell_type, size_cap=a.size_cap, top_n=a.top_n, tau_min=a.tau_min,
+            fetch_seqs=not a.no_seqs, link_max_dist=50_000,
+            impute_unlinked=False, require_gene_link=True)
+    else:
+        run(a.cell_type, size_cap=a.size_cap, top_n=a.top_n, tau_min=a.tau_min,
+            fetch_seqs=not a.no_seqs, link_max_dist=a.link_max_dist)

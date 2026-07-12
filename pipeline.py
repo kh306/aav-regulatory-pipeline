@@ -108,7 +108,9 @@ def fetch_hg38(chrom, start, end, retries=3):
 def run_pipeline(cell_type, backbone, linker=None, gene_score=None,
                  motif_scorer=None, *,
                  size_cap=800, top_n=25, merge_gap=500,
-                 tau_min=0.90, fetch_seqs=True, verbose=True):
+                 tau_min=0.90, fetch_seqs=True, verbose=True,
+                 link_max_dist=1_000_000, impute_unlinked=True,
+                 require_gene_link=False):
     """Run the accessibility->specificity->candidate->size funnel for one cell type.
 
     Parameters
@@ -187,22 +189,45 @@ def run_pipeline(cell_type, backbone, linker=None, gene_score=None,
         cand["target_gene"] = "NA"; cand["gene_dist_bp"] = np.nan
         cand["gene_link_method"] = "none"
 
+    # Confident-link distance gate. A nearest-TSS assignment far from the element
+    # is not a credible enhancer->gene link; beyond link_max_dist we drop the gene
+    # name (element becomes 'unlinked') but keep gene_dist_bp for transparency.
+    # Default 1 Mb reproduces the original (permissive) behaviour; set e.g. 50_000
+    # for a defensible enhancer-range gate.
+    if len(cand):
+        far = cand["gene_dist_bp"].astype(float) > link_max_dist
+        cand.loc[far, "target_gene"] = "NA"
+
     # Gene-expression evidence: how target-SPECIFIC is the linked gene's expression?
     # gene_score maps gene_symbol -> [0,1] specificity in the target cell type
     # (computed from a scRNA panel outside this module; passed in so logic stays
     # cell-type agnostic). Genes absent from the panel get a neutral 0.5.
     if gene_score is not None and len(cand):
         gs = cand["target_gene"].map(lambda g: gene_score.get(g, np.nan))
-        cand["gene_expr_specificity"] = gs.fillna(0.5)
+        # impute_unlinked=True (default) fills unlinked/absent genes with a neutral
+        # 0.5 -- reproduces original behaviour but lets high-Tau gene deserts float
+        # up the ranking on an imputed constant. impute_unlinked=False leaves them
+        # NaN so they carry no positive expression evidence.
+        cand["gene_expr_specificity"] = gs.fillna(0.5) if impute_unlinked else gs
     else:
         cand["gene_expr_specificity"] = np.nan
+
+    # Optionally restrict the ranked catalog to gene-linked candidates only, so the
+    # shortlist is interpretable parts rather than gene deserts padded to top_n.
+    if require_gene_link and len(cand):
+        cand = cand[cand["target_gene"].ne("NA")].reset_index(drop=True)
 
     # Composite score. Chromatin specificity (Tau) is the backbone; when gene
     # expression evidence is available it re-weights among the many high-Tau ties,
     # surfacing candidates whose target gene is expressed-specifically in the tissue.
     cand["specificity_per_bp"] = cand["tau_specificity"] / cand["length_bp"]
     if gene_score is not None:
-        cand["composite_score"] = cand["tau_specificity"] * (0.5 + 0.5 * cand["gene_expr_specificity"])
+        # Candidates with no expression evidence (NaN, when impute_unlinked=False)
+        # take expr=0, giving composite = 0.5*Tau: no expression boost, so they
+        # rank at or below any gene-linked candidate of equal Tau (which scores
+        # 0.5*Tau up to 1.0*Tau).
+        expr = cand["gene_expr_specificity"].fillna(0.0)
+        cand["composite_score"] = cand["tau_specificity"] * (0.5 + 0.5 * expr)
         sort_keys = ["composite_score", "tau_specificity", "specificity_per_bp"]
     else:
         cand["composite_score"] = cand["tau_specificity"]

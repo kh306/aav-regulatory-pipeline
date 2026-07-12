@@ -92,7 +92,10 @@ proposition: it removes likely-non-translating parts before wet-lab validation
 ## Honest scope & limitations
 
 This is a **candidate-prioritisation and de-risking** tool, not a promoter
-guarantee. Key limitations, stated plainly:
+guarantee. The pipeline was self-audited against known AI-overclaim failure
+modes; see **`AUDIT_RESPONSE.md`** for the review, the bugs it found, and the
+`--strict-links` mode that fixes them (recommended for reporting). Key
+limitations, stated plainly:
 
 1. **Accessible ≠ active ≠ a working promoter.** Open chromatin includes
    insulators, silencers, and poised-but-inactive elements. Some shortlisted

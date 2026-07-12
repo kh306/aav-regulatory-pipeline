@@ -1,0 +1,5 @@
+,gene_linked,max_link_kb,median_link_kb,conserved,no_ortholog,divergent,unknown,unlinked
+beta_permissive,7.0,46.0,17.8,7.0,0.0,0.0,0.0,18.0
+beta_strict,25.0,47.9,19.9,14.0,0.0,0.0,11.0,0.0
+ent_permissive,25.0,879.2,11.9,22.0,3.0,0.0,0.0,0.0
+ent_strict,25.0,29.5,5.1,20.0,3.0,2.0,0.0,0.0
