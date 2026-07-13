@@ -1,0 +1,176 @@
+cell_type,tissue,aav_rationale,config_source,composite_rank,chrom,start,end,target_gene,gene_dist_bp,tau_specificity,composite_score
+Pancreatic_Beta_Cell,pancreatic islet,extrahepatic,human-curated,1,chr11,2161090,2161490,INS,69.0,0.986425339366516,0.8429452900041137
+Pancreatic_Beta_Cell,pancreatic islet,extrahepatic,human-curated,2,chr11,2163559,2163959,INS,2538.0,0.986425339366516,0.7891402714932128
+Pancreatic_Beta_Cell,pancreatic islet,extrahepatic,human-curated,3,chr16,6834509,6834909,,1594907.0,1.0,0.75
+Pancreatic_Beta_Cell,pancreatic islet,extrahepatic,human-curated,4,chr3,103823622,103824022,,1543087.0,1.0,0.7363636363636364
+Pancreatic_Beta_Cell,pancreatic islet,extrahepatic,human-curated,5,chr13,68736925,68737325,,1371368.0,1.0,0.7227272727272728
+Pancreatic_Beta_Cell,pancreatic islet,extrahepatic,human-curated,6,chr12,21372582,21372982,IAPP,17823.0,0.990950226244344,0.6955678640837387
+Pancreatic_Beta_Cell,pancreatic islet,extrahepatic,human-curated,7,chr21,24043543,24043943,,1563774.0,1.0,0.6954545454545455
+Pancreatic_Beta_Cell,pancreatic islet,extrahepatic,human-curated,8,chr10,9376570,9376970,,1331392.0,1.0,0.6954545454545455
+Pancreatic_Beta_Cell,pancreatic islet,extrahepatic,human-curated,9,chr11,81440038,81440438,,1293626.0,1.0,0.6818181818181819
+Pancreatic_Beta_Cell,pancreatic islet,extrahepatic,human-curated,10,chr3,78702685,78703085,,1065113.0,1.0,0.6818181818181819
+Pancreatic_Beta_Cell,pancreatic islet,extrahepatic,human-curated,11,chr2,194203905,194204305,,1371872.0,1.0,0.6818181818181819
+Pancreatic_Beta_Cell,pancreatic islet,extrahepatic,human-curated,12,chr19,27748728,27749128,,1464223.0,1.0,0.6681818181818182
+Pancreatic_Beta_Cell,pancreatic islet,extrahepatic,human-curated,13,chr18,39951326,39951726,,2003708.0,1.0,0.6681818181818182
+Pancreatic_Beta_Cell,pancreatic islet,extrahepatic,human-curated,14,chr13,55055676,55056076,,2027063.0,1.0,0.6681818181818182
+Pancreatic_Beta_Cell,pancreatic islet,extrahepatic,human-curated,15,chr1,195428286,195428686,,1180739.0,1.0,0.6681818181818182
+Pancreatic_Beta_Cell,pancreatic islet,extrahepatic,human-curated,16,chr12,21341807,21342207,IAPP,12952.0,0.9819004524886876,0.661084395283762
+Pancreatic_Beta_Cell,pancreatic islet,extrahepatic,human-curated,17,chr12,21380637,21381037,IAPP,25878.0,1.0,0.6589453831213575
+Pancreatic_Beta_Cell,pancreatic islet,extrahepatic,human-curated,18,chr3,77442213,77442613,,1535718.0,1.0,0.6545454545454545
+Pancreatic_Beta_Cell,pancreatic islet,extrahepatic,human-curated,19,chr2,146661019,146661419,,1183298.0,1.0,0.6545454545454545
+Pancreatic_Beta_Cell,pancreatic islet,extrahepatic,human-curated,20,chr13,69012908,69013308,,1095385.0,1.0,0.6545454545454545
+Pancreatic_Beta_Cell,pancreatic islet,extrahepatic,human-curated,21,chr13,55407499,55407899,,1733219.0,1.0,0.6545454545454545
+Pancreatic_Beta_Cell,pancreatic islet,extrahepatic,human-curated,22,chr1,194447582,194447982,,1261169.0,1.0,0.6545454545454545
+Pancreatic_Beta_Cell,pancreatic islet,extrahepatic,human-curated,23,chr12,21374677,21375077,IAPP,19918.0,1.0,0.6446204834882845
+Pancreatic_Beta_Cell,pancreatic islet,extrahepatic,human-curated,24,chr12,21308770,21309170,IAPP,45989.0,0.995475113122172,0.6417036487213692
+Pancreatic_Beta_Cell,pancreatic islet,extrahepatic,human-curated,25,chr1,187930028,187930428,,1101279.0,1.0,0.640909090909091
+Small_Intestinal_Enterocyte,intestine,extrahepatic,human-curated,1,chr13,53873562,53873962,OLFM4,844949.0,0.9773755656108596,0.8844091448152623
+Small_Intestinal_Enterocyte,intestine,extrahepatic,human-curated,2,chr2,79120165,79120565,REG1A,3.0,0.9592760180995475,0.8313725490196079
+Small_Intestinal_Enterocyte,intestine,extrahepatic,human-curated,3,chr13,53085956,53086356,OLFM4,57343.0,0.995475113122172,0.7806821463492749
+Small_Intestinal_Enterocyte,intestine,extrahepatic,human-curated,4,chr2,79117514,79117914,REG1A,2648.0,0.9683257918552036,0.7746606334841629
+Small_Intestinal_Enterocyte,intestine,extrahepatic,human-curated,5,chr13,53032841,53033241,OLFM4,4228.0,0.986425339366516,0.7735850359279179
+Small_Intestinal_Enterocyte,intestine,extrahepatic,human-curated,6,chr2,79115089,79115489,REG1A,5073.0,0.9638009049773756,0.7710407239819005
+Small_Intestinal_Enterocyte,intestine,extrahepatic,human-curated,7,chr11,116823184,116823584,APOA4,80.0,0.9592760180995475,0.7686225447139577
+Small_Intestinal_Enterocyte,intestine,extrahepatic,human-curated,8,chr13,53907844,53908244,OLFM4,879231.0,0.9683257918552036,0.7593908150852038
+Small_Intestinal_Enterocyte,intestine,extrahepatic,human-curated,9,chr2,79139418,79139818,REG1A,19256.0,0.9457013574660632,0.7565610859728507
+Small_Intestinal_Enterocyte,intestine,extrahepatic,human-curated,10,chr1,206940181,206940581,PIGR,6085.0,0.9638009049773756,0.7456114018542259
+Small_Intestinal_Enterocyte,intestine,extrahepatic,human-curated,11,chr15,40350716,40351116,PHGR1,117.0,0.9095022624434388,0.7332638462348429
+Small_Intestinal_Enterocyte,intestine,extrahepatic,human-curated,12,chr13,53053356,53053756,OLFM4,24743.0,0.990950226244344,0.7173540841279351
+Small_Intestinal_Enterocyte,intestine,extrahepatic,human-curated,13,chr1,206958138,206958538,PIGR,11872.0,0.995475113122172,0.7108754427212555
+Small_Intestinal_Enterocyte,intestine,extrahepatic,human-curated,14,chr11,116819818,116820218,APOA4,3286.0,0.9547511312217196,0.7103543261962217
+Small_Intestinal_Enterocyte,intestine,extrahepatic,human-curated,15,chr13,53015055,53015455,OLFM4,13558.0,0.9728506787330315,0.7042517264269682
+Small_Intestinal_Enterocyte,intestine,extrahepatic,human-curated,16,chr13,53004604,53005004,OLFM4,24009.0,0.9683257918552036,0.7009761370017266
+Small_Intestinal_Enterocyte,intestine,extrahepatic,human-curated,17,chr13,53100686,53101086,OLFM4,72073.0,0.9683257918552036,0.7009761370017266
+Small_Intestinal_Enterocyte,intestine,extrahepatic,human-curated,18,chr13,52999123,52999523,OLFM4,29490.0,0.9457013574660632,0.6845981898755179
+Small_Intestinal_Enterocyte,intestine,extrahepatic,human-curated,19,chr13,53522033,53522433,OLFM4,493420.0,0.9457013574660632,0.6845981898755179
+Small_Intestinal_Enterocyte,intestine,extrahepatic,human-curated,20,chr15,40353693,40354093,PHGR1,2860.0,0.918552036199095,0.683593849761989
+Small_Intestinal_Enterocyte,intestine,extrahepatic,human-curated,21,chr13,53150557,53150957,OLFM4,121944.0,0.9411764705882352,0.6813226004502763
+Small_Intestinal_Enterocyte,intestine,extrahepatic,human-curated,22,chr11,116816227,116816627,APOA4,6877.0,0.990950226244344,0.6805727922871567
+Small_Intestinal_Enterocyte,intestine,extrahepatic,human-curated,23,chr11,116818853,116819253,APOA4,4251.0,0.986425339366516,0.6774651539662108
+Small_Intestinal_Enterocyte,intestine,extrahepatic,human-curated,24,chr15,40346190,40346590,PHGR1,4643.0,0.9004524886877828,0.6701240202100287
+Small_Intestinal_Enterocyte,intestine,extrahepatic,human-curated,25,chr5,160240271,160240671,FABP6,53104.0,0.9773755656108596,0.6651974471298256
+Pancreatic_Alpha_Cell_1,pancreatic islet,extrahepatic,AI-generated (held-out demo),1,chr2,162143840,162144240,GCG,8364.0,1.0,1.0
+Pancreatic_Alpha_Cell_1,pancreatic islet,extrahepatic,AI-generated (held-out demo),2,chr2,162142316,162142716,GCG,9888.0,0.986425339366516,0.986425339366516
+Pancreatic_Alpha_Cell_1,pancreatic islet,extrahepatic,AI-generated (held-out demo),3,chr2,162159420,162159820,GCG,7216.0,0.9773755656108596,0.9773755656108596
+Pancreatic_Alpha_Cell_1,pancreatic islet,extrahepatic,AI-generated (held-out demo),4,chr2,162167036,162167436,GCG,14832.0,0.9773755656108596,0.9773755656108596
+Pancreatic_Alpha_Cell_1,pancreatic islet,extrahepatic,AI-generated (held-out demo),5,chr2,162121466,162121866,GCG,30738.0,0.9683257918552036,0.9683257918552036
+Pancreatic_Alpha_Cell_1,pancreatic islet,extrahepatic,AI-generated (held-out demo),6,chr2,162149869,162150269,GCG,2335.0,0.9683257918552036,0.9683257918552036
+Pancreatic_Alpha_Cell_1,pancreatic islet,extrahepatic,AI-generated (held-out demo),7,chr2,162177964,162178364,GCG,25760.0,0.9592760180995475,0.9592760180995475
+Pancreatic_Alpha_Cell_1,pancreatic islet,extrahepatic,AI-generated (held-out demo),8,chr2,162175728,162176128,GCG,23524.0,0.9502262443438914,0.9502262443438914
+Pancreatic_Alpha_Cell_1,pancreatic islet,extrahepatic,AI-generated (held-out demo),9,chr2,162184781,162185181,GCG,32577.0,0.9140271493212668,0.9140271493212668
+Pancreatic_Alpha_Cell_1,pancreatic islet,extrahepatic,AI-generated (held-out demo),10,chr2,162172800,162173200,GCG,20596.0,0.9004524886877828,0.9004524886877828
+Pancreatic_Alpha_Cell_1,pancreatic islet,extrahepatic,AI-generated (held-out demo),11,chr18,31557427,31557827,TTR,618.0,0.990950226244344,0.8833777870952777
+Pancreatic_Alpha_Cell_1,pancreatic islet,extrahepatic,AI-generated (held-out demo),12,chr18,31603939,31604339,TTR,47130.0,0.986425339366516,0.8793440985697285
+Pancreatic_Alpha_Cell_1,pancreatic islet,extrahepatic,AI-generated (held-out demo),13,chr18,31606301,31606701,TTR,49492.0,0.9728506787330315,0.8672430329930808
+Pancreatic_Alpha_Cell_1,pancreatic islet,extrahepatic,AI-generated (held-out demo),14,chr18,31576604,31577004,TTR,19795.0,0.9638009049773756,0.8591756559419824
+Pancreatic_Alpha_Cell_1,pancreatic islet,extrahepatic,AI-generated (held-out demo),15,chr18,31587419,31587819,TTR,30610.0,0.9592760180995475,0.8551419674164332
+Pancreatic_Alpha_Cell_1,pancreatic islet,extrahepatic,AI-generated (held-out demo),16,chr18,31591158,31591558,TTR,34349.0,0.9411764705882352,0.8390072133142363
+Pancreatic_Alpha_Cell_1,pancreatic islet,extrahepatic,AI-generated (held-out demo),17,chr18,31596063,31596463,TTR,39254.0,0.9230769230769232,0.8228724592120396
+Pancreatic_Alpha_Cell_1,pancreatic islet,extrahepatic,AI-generated (held-out demo),18,chr18,31550903,31551303,TTR,5906.0,0.9095022624434388,0.8107713936353919
+Pancreatic_Alpha_Cell_1,pancreatic islet,extrahepatic,AI-generated (held-out demo),19,chr18,31562716,31563116,TTR,5907.0,0.9004524886877828,0.8027040165842935
+Pancreatic_Alpha_Cell_1,pancreatic islet,extrahepatic,AI-generated (held-out demo),20,chr20,5926164,5926564,CHGB,14854.0,0.990950226244344,0.6795681204719719
+Pancreatic_Alpha_Cell_1,pancreatic islet,extrahepatic,AI-generated (held-out demo),21,chr20,5927697,5928097,CHGB,16387.0,0.990950226244344,0.6795681204719719
+Pancreatic_Alpha_Cell_1,pancreatic islet,extrahepatic,AI-generated (held-out demo),22,chr20,5883766,5884166,CHGB,27544.0,0.9638009049773756,0.6609498158015069
+Pancreatic_Alpha_Cell_1,pancreatic islet,extrahepatic,AI-generated (held-out demo),23,chr20,5890782,5891182,CHGB,20528.0,0.9638009049773756,0.6609498158015069
+Pancreatic_Alpha_Cell_1,pancreatic islet,extrahepatic,AI-generated (held-out demo),24,chr20,5864139,5864539,CHGB,47171.0,0.9592760180995475,0.6578467650230961
+Pancreatic_Alpha_Cell_1,pancreatic islet,extrahepatic,AI-generated (held-out demo),25,chr20,5920172,5920572,CHGB,8862.0,0.9547511312217196,0.6547437142446852
+Ventricular_Cardiomyocyte,heart,extrahepatic,human-curated,1,chr1,237047961,237048361,RYR2,5977.0,1.0,1.0
+Ventricular_Cardiomyocyte,heart,extrahepatic,human-curated,2,chr1,237061244,237061644,RYR2,19260.0,1.0,1.0
+Ventricular_Cardiomyocyte,heart,extrahepatic,human-curated,3,chr1,237026111,237026511,RYR2,15873.0,0.995475113122172,0.995475113122172
+Ventricular_Cardiomyocyte,heart,extrahepatic,human-curated,4,chr1,237027868,237028268,RYR2,14116.0,0.995475113122172,0.995475113122172
+Ventricular_Cardiomyocyte,heart,extrahepatic,human-curated,5,chr1,237052681,237053081,RYR2,10697.0,0.995475113122172,0.995475113122172
+Ventricular_Cardiomyocyte,heart,extrahepatic,human-curated,6,chr1,237062983,237063383,RYR2,20999.0,0.995475113122172,0.995475113122172
+Ventricular_Cardiomyocyte,heart,extrahepatic,human-curated,7,chr1,237033805,237034205,RYR2,8179.0,0.990950226244344,0.990950226244344
+Ventricular_Cardiomyocyte,heart,extrahepatic,human-curated,8,chr1,237050188,237050588,RYR2,8204.0,0.990950226244344,0.990950226244344
+Ventricular_Cardiomyocyte,heart,extrahepatic,human-curated,9,chr1,237065727,237066127,RYR2,23743.0,0.990950226244344,0.990950226244344
+Ventricular_Cardiomyocyte,heart,extrahepatic,human-curated,10,chr1,237091630,237092030,RYR2,49646.0,0.990950226244344,0.990950226244344
+Ventricular_Cardiomyocyte,heart,extrahepatic,human-curated,11,chr1,237044265,237044665,RYR2,2281.0,0.9819004524886876,0.9819004524886876
+Ventricular_Cardiomyocyte,heart,extrahepatic,human-curated,12,chr1,237074472,237074872,RYR2,32488.0,0.9819004524886876,0.9819004524886876
+Ventricular_Cardiomyocyte,heart,extrahepatic,human-curated,13,chr1,237085933,237086333,RYR2,43949.0,0.9728506787330315,0.9728506787330315
+Ventricular_Cardiomyocyte,heart,extrahepatic,human-curated,14,chr2,178782719,178783119,TTN,47883.0,0.990950226244344,0.9711710212014226
+Ventricular_Cardiomyocyte,heart,extrahepatic,human-curated,15,chr1,237031009,237031409,RYR2,10975.0,0.9683257918552036,0.9683257918552036
+Ventricular_Cardiomyocyte,heart,extrahepatic,human-curated,16,chr2,178790920,178791320,TTN,39682.0,0.986425339366516,0.9667364503283568
+Ventricular_Cardiomyocyte,heart,extrahepatic,human-curated,17,chr2,178798998,178799398,TTN,31604.0,0.986425339366516,0.9667364503283568
+Ventricular_Cardiomyocyte,heart,extrahepatic,human-curated,18,chr1,237071569,237071969,RYR2,29585.0,0.9638009049773756,0.9638009049773756
+Ventricular_Cardiomyocyte,heart,extrahepatic,human-curated,19,chr2,178824176,178824576,TTN,6426.0,0.9819004524886876,0.9623018794552908
+Ventricular_Cardiomyocyte,heart,extrahepatic,human-curated,20,chr2,178869611,178870011,TTN,39009.0,0.9819004524886876,0.9623018794552908
+Ventricular_Cardiomyocyte,heart,extrahepatic,human-curated,21,chr2,178783883,178784283,TTN,46719.0,0.9728506787330315,0.9534327377091592
+Ventricular_Cardiomyocyte,heart,extrahepatic,human-curated,22,chr2,178800529,178800929,TTN,30073.0,0.9683257918552036,0.9489981668360932
+Ventricular_Cardiomyocyte,heart,extrahepatic,human-curated,23,chr2,178830497,178830897,TTN,105.0,0.9638009049773756,0.9445635959630274
+Ventricular_Cardiomyocyte,heart,extrahepatic,human-curated,24,chr2,178834082,178834482,TTN,3480.0,0.9592760180995475,0.9401290250899615
+Ventricular_Cardiomyocyte,heart,extrahepatic,human-curated,25,chr1,237031982,237032382,RYR2,10002.0,0.9366515837104072,0.9366515837104072
+Ductal_Cell_Pancreatic,pancreatic ductal,extrahepatic,human-curated,1,chr14,94637019,94637419,SERPINA3,24835.0,0.9547511312217196,0.9412640576817988
+Ductal_Cell_Pancreatic,pancreatic ductal,extrahepatic,human-curated,2,chr1,58573742,58574142,TACSTD2,3310.0,0.9366515837104072,0.9366515837104072
+Ductal_Cell_Pancreatic,pancreatic ductal,extrahepatic,human-curated,3,chr3,149411571,149411971,TM4SF1,34079.0,0.9683257918552036,0.9324984215295624
+Ductal_Cell_Pancreatic,pancreatic ductal,extrahepatic,human-curated,4,chr14,94606249,94606649,SERPINA3,5935.0,0.9411764705882352,0.9278811563877448
+Ductal_Cell_Pancreatic,pancreatic ductal,extrahepatic,human-curated,5,chr7,93897727,93898127,TFPI2,7174.0,0.995475113122172,0.879717238828325
+Ductal_Cell_Pancreatic,pancreatic ductal,extrahepatic,human-curated,6,chr12,52222797,52223197,KRT7,9523.0,0.9683257918552036,0.878292946337779
+Ductal_Cell_Pancreatic,pancreatic ductal,extrahepatic,human-curated,7,chr7,142749126,142749526,PRSS1,142.0,0.9547511312217196,0.8672468905390049
+Ductal_Cell_Pancreatic,pancreatic ductal,extrahepatic,human-curated,8,chr7,142771173,142771573,PRSS2,10975.0,0.986425339366516,0.8525322460593528
+Ductal_Cell_Pancreatic,pancreatic ductal,extrahepatic,human-curated,9,chr7,142774725,142775125,PRSS2,14527.0,0.986425339366516,0.8525322460593528
+Ductal_Cell_Pancreatic,pancreatic ductal,extrahepatic,human-curated,10,chr4,73775888,73776288,CXCL8,35569.0,0.9502262443438914,0.8310255565544075
+Ductal_Cell_Pancreatic,pancreatic ductal,extrahepatic,human-curated,11,chr6,35797206,35797606,CLPS,62.0,0.9276018099547512,0.8305713495865826
+Ductal_Cell_Pancreatic,pancreatic ductal,extrahepatic,human-curated,12,chr12,52904360,52904760,KRT18,44311.0,0.9321266968325792,0.8280630480663195
+Ductal_Cell_Pancreatic,pancreatic ductal,extrahepatic,human-curated,13,chr3,190307242,190307642,CLDN1,15004.0,0.9366515837104072,0.8263323885872967
+Ductal_Cell_Pancreatic,pancreatic ductal,extrahepatic,human-curated,14,chr6,35798154,35798554,CLPS,1010.0,0.918552036199095,0.8224682144686647
+Ductal_Cell_Pancreatic,pancreatic ductal,extrahepatic,human-curated,15,chrX,12997912,12998312,TMSB4X,23002.0,0.9140271493212668,0.8209146475140549
+Ductal_Cell_Pancreatic,pancreatic ductal,extrahepatic,human-curated,16,chr6,35811029,35811429,CLPS,13885.0,0.9095022624434388,0.8143650793507469
+Ductal_Cell_Pancreatic,pancreatic ductal,extrahepatic,human-curated,17,chr12,52945441,52945841,KRT18,3230.0,0.9140271493212668,0.8119841539291093
+Ductal_Cell_Pancreatic,pancreatic ductal,extrahepatic,human-curated,18,chr11,1034025,1034425,MUC6,2493.0,0.986425339366516,0.8099848380698805
+Ductal_Cell_Pancreatic,pancreatic ductal,extrahepatic,human-curated,19,chr7,130364442,130364842,CPA1,15697.0,0.9819004524886876,0.8021861794625177
+Ductal_Cell_Pancreatic,pancreatic ductal,extrahepatic,human-curated,20,chr4,73897436,73897836,CXCL1,28243.0,0.9140271493212668,0.8003116821154371
+Ductal_Cell_Pancreatic,pancreatic ductal,extrahepatic,human-curated,21,chr10,116553418,116553818,PNLIP,7687.0,0.990950226244344,0.7966887830075284
+Ductal_Cell_Pancreatic,pancreatic ductal,extrahepatic,human-curated,22,chr5,172786841,172787241,DUSP1,15846.0,0.9819004524886876,0.7946208231307461
+Ductal_Cell_Pancreatic,pancreatic ductal,extrahepatic,human-curated,23,chr11,1040100,1040500,MUC6,3582.0,0.9547511312217196,0.7839761506089211
+Ductal_Cell_Pancreatic,pancreatic ductal,extrahepatic,human-curated,24,chr16,75216269,75216669,CTRB1,2519.0,0.9683257918552036,0.781947011023688
+Ductal_Cell_Pancreatic,pancreatic ductal,extrahepatic,human-curated,25,chr11,1049386,1049786,MUC6,12868.0,0.9366515837104072,0.7691140434883728
+Fetal_Metanephric_Cell,kidney,extrahepatic,human-curated,1,chr5,151027959,151028359,GPX3,7568.0,0.990950226244344,0.990950226244344
+Fetal_Metanephric_Cell,kidney,extrahepatic,human-curated,2,chr5,150987730,150988130,GPX3,32661.0,0.9819004524886876,0.9819004524886876
+Fetal_Metanephric_Cell,kidney,extrahepatic,human-curated,3,chr5,151036571,151036971,GPX3,16180.0,0.9683257918552036,0.9683257918552036
+Fetal_Metanephric_Cell,kidney,extrahepatic,human-curated,4,chr5,151051176,151051576,GPX3,30785.0,0.9638009049773756,0.9638009049773756
+Fetal_Metanephric_Cell,kidney,extrahepatic,human-curated,5,chr5,151042467,151042867,GPX3,22076.0,0.9411764705882352,0.9411764705882352
+Fetal_Metanephric_Cell,kidney,extrahepatic,human-curated,6,chr5,151014410,151014810,GPX3,5981.0,0.9321266968325792,0.9321266968325792
+Fetal_Metanephric_Cell,kidney,extrahepatic,human-curated,7,chr1,47201176,47201576,PDZK1IP1,10332.0,0.9502262443438914,0.7811675122966019
+Fetal_Metanephric_Cell,kidney,extrahepatic,human-curated,8,chr1,47208382,47208782,PDZK1IP1,17538.0,0.9411764705882352,0.7737278217033009
+Fetal_Metanephric_Cell,kidney,extrahepatic,human-curated,9,chr1,47191511,47191911,PDZK1IP1,667.0,0.9321266968325792,0.76628813111
+Fetal_Metanephric_Cell,kidney,extrahepatic,human-curated,10,chr20,57550977,57551377,PCK1,9903.0,0.986425339366516,0.7654116666338447
+Fetal_Metanephric_Cell,kidney,extrahepatic,human-curated,11,chr20,57580456,57580856,PCK1,19576.0,0.9773755656108596,0.7583895412518828
+Fetal_Metanephric_Cell,kidney,extrahepatic,human-curated,12,chr20,57567705,57568105,PCK1,6825.0,0.9728506787330315,0.7548784785609018
+Fetal_Metanephric_Cell,kidney,extrahepatic,human-curated,13,chr20,57560015,57560415,PCK1,865.0,0.9502262443438914,0.7373231651059972
+Fetal_Metanephric_Cell,kidney,extrahepatic,human-curated,14,chr5,135567654,135568054,CXCL14,11425.0,0.9773755656108596,0.7368632868892153
+Fetal_Metanephric_Cell,kidney,extrahepatic,human-curated,15,chr5,135571151,135571551,CXCL14,7928.0,0.9773755656108596,0.7368632868892153
+Fetal_Metanephric_Cell,kidney,extrahepatic,human-curated,16,chr5,135559315,135559715,CXCL14,19764.0,0.9728506787330315,0.7334518827832467
+Fetal_Metanephric_Cell,kidney,extrahepatic,human-curated,17,chr20,57548707,57549107,PCK1,12173.0,0.9366515837104072,0.7267899770330544
+Fetal_Metanephric_Cell,kidney,extrahepatic,human-curated,18,chr9,101469139,101469539,ALDOB,19675.0,0.990950226244344,0.7260032859389901
+Fetal_Metanephric_Cell,kidney,extrahepatic,human-curated,19,chr9,101468069,101468469,ALDOB,18605.0,0.986425339366516,0.7226882024415519
+Fetal_Metanephric_Cell,kidney,extrahepatic,human-curated,20,chr2,127058232,127058632,BIN1,48856.0,0.990950226244344,0.7120228388454195
+Fetal_Metanephric_Cell,kidney,extrahepatic,human-curated,21,chr2,127064023,127064423,BIN1,43065.0,0.986425339366516,0.7087715930059427
+Fetal_Metanephric_Cell,kidney,extrahepatic,human-curated,22,chr9,101462543,101462943,ALDOB,13079.0,0.9638009049773756,0.7061127849543603
+Fetal_Metanephric_Cell,kidney,extrahepatic,human-curated,23,chr20,57589889,57590289,PCK1,29009.0,0.9095022624434388,0.7057236008871688
+Fetal_Metanephric_Cell,kidney,extrahepatic,human-curated,24,chr15,45384649,45385049,GATM,17478.0,0.9728506787330315,0.705603485397853
+Fetal_Metanephric_Cell,kidney,extrahepatic,human-curated,25,chr2,127124165,127124565,BIN1,17077.0,0.9819004524886876,0.7055203471664658
+Hepatocyte,liver,LIVER (LNP territory),human-curated,1,chr4,73405980,73406380,ALB,9066.0,0.995475113122172,0.995475113122172
+Hepatocyte,liver,LIVER (LNP territory),human-curated,2,chr4,73378884,73379284,ALB,18030.0,0.986425339366516,0.986425339366516
+Hepatocyte,liver,LIVER (LNP territory),human-curated,3,chr4,73411861,73412261,ALB,14947.0,0.9819004524886876,0.9819004524886876
+Hepatocyte,liver,LIVER (LNP territory),human-curated,4,chr4,73403948,73404348,ALB,7034.0,0.9773755656108596,0.9773755656108596
+Hepatocyte,liver,LIVER (LNP territory),human-curated,5,chr4,73388825,73389225,ALB,8089.0,0.9683257918552036,0.9683257918552036
+Hepatocyte,liver,LIVER (LNP territory),human-curated,6,chr4,73375376,73375776,ALB,21538.0,0.9638009049773756,0.9638009049773756
+Hepatocyte,liver,LIVER (LNP territory),human-curated,7,chr4,73415887,73416287,AFP,15051.0,0.986425339366516,0.8507202979578807
+Hepatocyte,liver,LIVER (LNP territory),human-curated,8,chr4,73414465,73414865,AFP,16473.0,0.9819004524886876,0.8468179112700004
+Hepatocyte,liver,LIVER (LNP territory),human-curated,9,chr4,73451494,73451894,AFP,20556.0,0.9411764705882352,0.8116964310790787
+Hepatocyte,liver,LIVER (LNP territory),human-curated,10,chr3,186612685,186613085,AHSG,175.0,0.9773755656108596,0.8106567078232839
+Hepatocyte,liver,LIVER (LNP territory),human-curated,11,chr3,186605089,186605489,AHSG,7771.0,0.9728506787330315,0.8069036675092872
+Hepatocyte,liver,LIVER (LNP territory),human-curated,12,chr4,73453611,73454011,AFP,22673.0,0.9321266968325792,0.8038916577033184
+Hepatocyte,liver,LIVER (LNP territory),human-curated,13,chr11,18262692,18263092,SAA1,3368.0,0.990950226244344,0.7984976390985968
+Hepatocyte,liver,LIVER (LNP territory),human-curated,14,chr11,18288652,18289052,SAA1,22592.0,0.9773755656108596,0.7875593152753284
+Hepatocyte,liver,LIVER (LNP territory),human-curated,15,chr11,18271067,18271467,SAA1,5007.0,0.9728506787330315,0.7839132073342389
+Hepatocyte,liver,LIVER (LNP territory),human-curated,16,chr3,186606216,186606616,AHSG,6644.0,0.9411764705882352,0.7806323853113104
+Hepatocyte,liver,LIVER (LNP territory),human-curated,17,chr16,72044921,72045321,HP,9384.0,0.986425339366516,0.7754077582315229
+Hepatocyte,liver,LIVER (LNP territory),human-curated,18,chr3,133712033,133712433,TF,33807.0,0.9819004524886876,0.7632017655580324
+Hepatocyte,liver,LIVER (LNP territory),human-curated,19,chr11,18259282,18259682,SAA1,6778.0,0.9411764705882352,0.7583904517466126
+Hepatocyte,liver,LIVER (LNP territory),human-curated,20,chr16,72043068,72043468,HP,11237.0,0.9638009049773756,0.7576231766207081
+Hepatocyte,liver,LIVER (LNP territory),human-curated,21,chr14,94409404,94409804,SERPINA1,18911.0,1.0,0.7544900911626644
+Hepatocyte,liver,LIVER (LNP territory),human-curated,22,chr16,72054126,72054526,HP,179.0,0.9547511312217196,0.7505093439763822
+Hepatocyte,liver,LIVER (LNP territory),human-curated,23,chr3,149192788,149193188,CP,28841.0,1.0,0.7474008260252014
+Hepatocyte,liver,LIVER (LNP territory),human-curated,24,chr3,149202999,149203399,CP,18630.0,1.0,0.7474008260252014
+Hepatocyte,liver,LIVER (LNP territory),human-curated,25,chr3,149238223,149238623,CP,16594.0,1.0,0.7474008260252014

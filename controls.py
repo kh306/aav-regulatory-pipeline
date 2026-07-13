@@ -24,8 +24,14 @@ import pandas as pd
 
 # Known positive-control marker genes per cell type (substring-keyed).
 POSITIVE_MARKERS = {
-    "beta":       ["INS", "IAPP", "PDX1", "NKX6-1", "MAFA", "PCSK1", "CHGA", "SCGN"],
-    "enterocyte": ["OLFM4", "APOA4", "RBP2", "FABP6", "PIGR", "ANPEP", "VIL1", "CDX2"],
+    "beta":          ["INS", "IAPP", "PDX1", "NKX6-1", "MAFA", "PCSK1", "CHGA", "SCGN"],
+    "enterocyte":    ["OLFM4", "APOA4", "RBP2", "FABP6", "PIGR", "ANPEP", "VIL1", "CDX2"],
+    # --- added to demonstrate reusability across more cell types (human expr cached) ---
+    "alpha":         ["GCG", "ARX", "IRX2", "MAFB", "TTR", "PCSK2"],            # pancreatic alpha
+    "ductal":        ["KRT19", "CFTR", "SOX9", "MMP7", "SPP1", "CEACAM6"],      # pancreatic ductal
+    "hepatocyte":    ["ALB", "APOB", "SERPINA1", "CYP3A4", "ASGR1", "TF", "FGA"],  # hepatocyte
+    "cardiomyocyte": ["TNNT2", "MYH6", "NPPA", "ACTC1", "TNNI3", "MYL7", "RYR2"],  # cardiomyocyte
+    "metanephric":   ["SIX2", "WT1", "PAX2", "SALL1", "CITED1", "EYA1"],        # fetal nephron progenitor
 }
 
 # Housekeeping / ubiquitous loci for the negative control (species: human hg38).
@@ -48,9 +54,14 @@ def markers_for(cell_type):
     return []
 
 
-def positive_control(catalog, cell_type):
-    """Which marker genes appear among gene-linked shortlist candidates?"""
-    markers = markers_for(cell_type)
+def positive_control(catalog, cell_type, markers=None):
+    """Which marker genes appear among gene-linked shortlist candidates?
+
+    `markers` overrides the built-in curated set — used when the positive-control
+    genes come from a machine-generated (autoconfig) config instead of the
+    hand-curated POSITIVE_MARKERS dict.
+    """
+    markers = markers if markers is not None else markers_for(cell_type)
     linked = set(str(g) for g in catalog.get("target_gene", []) if g not in (None, "NA", ""))
     found = [m for m in markers if m in linked]
     return {

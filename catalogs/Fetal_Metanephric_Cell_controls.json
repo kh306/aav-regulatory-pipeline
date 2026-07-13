@@ -1,0 +1,30 @@
+{
+  "positive": {
+    "markers_expected": [
+      "SIX2",
+      "WT1",
+      "PAX2",
+      "SALL1",
+      "CITED1",
+      "EYA1"
+    ],
+    "markers_found": [],
+    "n_found": 0,
+    "n_expected": 6,
+    "pass": false,
+    "top_marker_rank": null
+  },
+  "negative_chromatin": {
+    "median_promoter_tau": 0.01809954751131222,
+    "median_promoter_breadth": 218.0,
+    "frac_below_specific_threshold": 1.0,
+    "threshold": 0.9,
+    "pass": true
+  },
+  "negative_expression": {
+    "median_expr_specificity": 0.1799046253995433,
+    "frac_below": 1.0,
+    "threshold": 0.3,
+    "pass": true
+  }
+}

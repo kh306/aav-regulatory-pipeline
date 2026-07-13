@@ -1,0 +1,35 @@
+{
+  "positive": {
+    "markers_expected": [
+      "ALB",
+      "APOB",
+      "SERPINA1",
+      "CYP3A4",
+      "ASGR1",
+      "TF",
+      "FGA"
+    ],
+    "markers_found": [
+      "ALB",
+      "SERPINA1",
+      "TF"
+    ],
+    "n_found": 3,
+    "n_expected": 7,
+    "pass": true,
+    "top_marker_rank": 1
+  },
+  "negative_chromatin": {
+    "median_promoter_tau": 0.01809954751131222,
+    "median_promoter_breadth": 218.0,
+    "frac_below_specific_threshold": 1.0,
+    "threshold": 0.9,
+    "pass": true
+  },
+  "negative_expression": {
+    "median_expr_specificity": 0.007020330928064951,
+    "frac_below": 1.0,
+    "threshold": 0.3,
+    "pass": true
+  }
+}

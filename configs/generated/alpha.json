@@ -1,0 +1,28 @@
+{
+  "catlas_match": "Pancreatic_Alpha_Cell_1",
+  "identity_tfs": [
+    "ARX",
+    "PAX4",
+    "MAFA",
+    "NEUROD1",
+    "FOXA2"
+  ],
+  "positive_controls": [
+    "GCG",
+    "ARX",
+    "MAFA",
+    "SLC6A3",
+    "TTR",
+    "HHEX",
+    "PCSK2",
+    "CPE"
+  ],
+  "request": "pancreatic alpha cell (glucagon-producing islet cell)",
+  "dropped_invalid": {
+    "identity_tfs": [],
+    "positive_controls": []
+  },
+  "provenance": "machine-generated (host.llm) + validated against GENCODE v44 gene symbols",
+  "model": "claude-haiku-4-5-20251001",
+  "generated": true
+}

@@ -22,16 +22,25 @@ pipeline against source data. Findings and fixes below.
 
 ## Problems found, and the fixes
 
-**1. Long-range nearest-TSS "links" were presented as real enhancer-gene
-relationships.** In the original (permissive) run the top enterocyte candidate
-was **845 kb** from OLFM4, and another was 879 kb — nearest-TSS assigns *some*
-gene to every element regardless of distance, and the conservation flag then
-inherited that assignment. An ~845 kb "link" is not a credible enhancer-gene
-call.
+**1. Long-range nearest-TSS "links" were presented as facts, not guesses.** In
+the original (permissive) run the top enterocyte candidate was **845 kb** from
+OLFM4, and another was 879 kb — nearest-TSS assigns *some* gene to every element
+regardless of distance, and the conservation flag then inherited that
+assignment. The issue is *not* that enhancers can't act over long ranges — they
+demonstrably can (the ZRS enhancer drives SHH from ~1 Mb away, inside an intron
+of LMBR1). The issue is that nearest-TSS measures **linear distance, not
+physical contact**, so it cannot distinguish a genuine long-range enhancer from
+a coincidental nearest neighbour in a gene desert. At 845 kb, "OLFM4" is an
+unsupported guess dressed as a fact.
 → **Fix:** added a confident-link **distance gate** (`link_max_dist`, default
-1 Mb reproduces old behaviour; `--strict-links` sets 50 kb). Beyond the gate the
-gene name is dropped and the element is `unlinked`; `gene_dist_bp` is always
-retained for transparency.
+1 Mb reproduces old behaviour; `--strict-links` sets 50 kb — the range where
+"nearest gene" is defensible on proximity alone). Beyond the gate the gene name
+is dropped and the element is `unlinked`; `gene_dist_bp` is always retained for
+transparency. This is a **precision/recall trade-off**, not a biological law: it
+deliberately drops real long-range enhancers (ZRS-like) to avoid overclaiming.
+The correct long-term fix is contact-based linking (Hi-C / ABC scores) in the
+pipeline's existing pluggable-linker slot — unavailable here only because the
+public ABC-score files on the CATLAS mirror were empty.
 
 **2. The beta catalog was mostly gene-desert noise.** Only 7/25 beta candidates
 were gene-linked; the other 18 sat a mean of **1.43 Mb** from any TSS and were
@@ -69,7 +78,8 @@ to `mouse_expr_unmeasured`; PHGR1 stayed `no_ortholog` (verified).
 | flagged high-risk | 0 | 0 | 3 | 5 |
 
 The enterocyte max link distance is the headline correction: **879 kb -> 29 kb**,
-every candidate now within credible enhancer range. Beta's max rose slightly
+every candidate now within the range where a nearest-gene assignment is
+defensible on proximity alone. Beta's max rose slightly
 (46 -> 48 kb) only because the gate admitted more genuine within-50 kb genes once
 the desert padding was removed; all 25 are now real gene-linked parts. The
 PHGR1 `no_ortholog` differentiator survives in strict mode (ranks 9, 17, 20).

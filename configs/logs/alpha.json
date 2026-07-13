@@ -1,0 +1,7 @@
+{
+  "key": "alpha",
+  "request": "pancreatic alpha cell (glucagon-producing islet cell)",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_sha": "38793ec5827d",
+  "response": "```json\n{\n  \"catlas_match\": \"Pancreatic_Alpha_Cell_1\",\n  \"identity_tfs\": [\"ARX\", \"PAX4\", \"MAFA\", \"NEUROD1\", \"FOXA2\"],\n  \"positive_controls\": [\"GCG\", \"ARX\", \"MAFA\", \"SLC6A3\", \"TTR\", \"HHEX\", \"PCSK2\", \"CPE\"]\n}\n```"
+}

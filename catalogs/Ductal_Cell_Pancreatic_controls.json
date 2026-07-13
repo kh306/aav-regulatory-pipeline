@@ -1,0 +1,30 @@
+{
+  "positive": {
+    "markers_expected": [
+      "KRT19",
+      "CFTR",
+      "SOX9",
+      "MMP7",
+      "SPP1",
+      "CEACAM6"
+    ],
+    "markers_found": [],
+    "n_found": 0,
+    "n_expected": 6,
+    "pass": false,
+    "top_marker_rank": null
+  },
+  "negative_chromatin": {
+    "median_promoter_tau": 0.01809954751131222,
+    "median_promoter_breadth": 218.0,
+    "frac_below_specific_threshold": 1.0,
+    "threshold": 0.9,
+    "pass": true
+  },
+  "negative_expression": {
+    "median_expr_specificity": 0.20953639485773662,
+    "frac_below": 0.6666666666666666,
+    "threshold": 0.3,
+    "pass": true
+  }
+}

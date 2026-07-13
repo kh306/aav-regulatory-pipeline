@@ -39,8 +39,14 @@ CATA = os.path.join(os.path.dirname(__file__), "catalogs")
 # Map a CATLAS cell-type name to the Census scRNA label used for expression.
 # (Data, not logic -- extend for new tissues.)
 CENSUS_LABEL = {
-    "beta":       "type B pancreatic cell",
-    "enterocyte": "enterocyte of epithelium of small intestine",
+    "beta":          "type B pancreatic cell",
+    "enterocyte":    "enterocyte of epithelium of small intestine",
+    # --- added cell types (human expression panels already cached) ---
+    "alpha":         "pancreatic A cell",
+    "ductal":        "pancreatic ductal cell",
+    "hepatocyte":    "hepatocyte",
+    "cardiomyocyte": "cardiac muscle cell",
+    "metanephric":   "kidney epithelial cell",
 }
 
 
@@ -52,14 +58,26 @@ def census_label_for(cell_type):
     return None
 
 
-def make_motif_scorer(cell_type):
-    tfs = TC.tfs_for(cell_type)
+def make_motif_scorer(cell_type, tfs=None):
+    tfs = tfs if tfs is not None else TC.tfs_for(cell_type)
     pfm_dir = os.path.join(DATA, "motifs")
     return lambda seqs: MO.motif_scores(seqs, tfs, pfm_dir, TC.TF_PFM)
 
 
 def run(cell_type, size_cap=800, top_n=25, tau_min=0.90, fetch_seqs=True,
-        link_max_dist=1_000_000, impute_unlinked=True, require_gene_link=False):
+        link_max_dist=1_000_000, impute_unlinked=True, require_gene_link=False,
+        config=None):
+    """Run the pipeline for one cell type.
+
+    `config` (optional): a dict with `identity_tfs` and `positive_controls`,
+    e.g. a machine-generated config from autoconfig.py. When given, it overrides
+    the hand-curated tf_config/controls dicts — this is how a cell type nobody
+    curated by hand still runs. When None, the curated sets are used (beta,
+    enterocyte). No LLM call happens here: `config` is a plain dict read from a
+    cached file.
+    """
+    cfg_tfs = config.get("identity_tfs") if config else None
+    cfg_pos = config.get("positive_controls") if config else None
     bb = P.Backbone(data_dir=DATA)
     linker = P.NearestTSSLinker(os.path.join(DATA, "gene_tss.tsv"))
 
@@ -71,7 +89,7 @@ def run(cell_type, size_cap=800, top_n=25, tau_min=0.90, fetch_seqs=True,
 
     # Run the funnel (accessibility -> specificity -> candidate -> size -> motif)
     res = P.run_pipeline(cell_type, bb, linker=linker, gene_score=human_gs,
-                         motif_scorer=make_motif_scorer(cell_type),
+                         motif_scorer=make_motif_scorer(cell_type, tfs=cfg_tfs),
                          size_cap=size_cap, top_n=top_n, tau_min=tau_min,
                          fetch_seqs=fetch_seqs, verbose=True,
                          link_max_dist=link_max_dist,
@@ -93,7 +111,7 @@ def run(cell_type, size_cap=800, top_n=25, tau_min=0.90, fetch_seqs=True,
         catalog = CS.conservation_flags(catalog, human_gs, mouse_gs, ortho)
 
     # Controls
-    pos = CTRL.positive_control(catalog, cell_type)
+    pos = CTRL.positive_control(catalog, cell_type, markers=cfg_pos)
     neg = CTRL.negative_control(bb, cell_type)
     neg_e = CTRL.negative_control_expression(human_gs) if human_gs else {"pass": None}
     controls = {"positive": pos,
@@ -114,9 +132,46 @@ def run(cell_type, size_cap=800, top_n=25, tau_min=0.90, fetch_seqs=True,
     return {"catalog": catalog, "funnel": res["funnel"], "controls": controls}
 
 
+def list_cell_types(contains=None):
+    """Print the CATLAS cell-type names you can pass as the argument.
+
+    The argument is matched case-insensitively as a SUBSTRING against these
+    names, so 'beta' finds 'Pancreatic_Beta_Cell'. Names with a cached expression
+    panel (marked *) get full ranking + cross-species; the rest still run the
+    accessibility->specificity->size funnel.
+    """
+    import pandas as pd, os
+    bbdir = os.path.join(os.path.dirname(__file__), "data")
+    names = pd.read_csv(os.path.join(bbdir, "catlas_celltypes.csv")).iloc[:, -1].tolist()
+    ranked = set()
+    try:
+        ranked = set(pd.read_parquet(os.path.join(bbdir, "human_expr_panel.parquet")).columns)
+    except Exception:
+        pass
+    # which configured keys (CENSUS_LABEL) select a ranked panel
+    ranked_keys = {k for k, v in CENSUS_LABEL.items() if v in ranked}
+    if contains:
+        names = [n for n in names if contains.lower() in n.lower()]
+    print(f"{len(names)} CATLAS cell-type names"
+          + (f" containing '{contains}'" if contains else "") + ":")
+    for n in names:
+        star = " *" if any(k in n.lower() for k in ranked_keys) else ""
+        print(f"  {n}{star}")
+    print("\n  * = full ranking + cross-species available (expression panel cached).")
+    print("  Pass any name (or a unique substring) as the argument, e.g.:")
+    print('    python run.py "Hepatocyte"')
+    print('    python run.py "cardiomyocyte" --strict-links')
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(description="Reusable AAV regulatory-element pipeline")
-    ap.add_argument("cell_type", help="CATLAS cell-type name, e.g. 'Pancreatic_Beta_Cell'")
+    ap.add_argument("cell_type", nargs="?", default=None,
+                    help="CATLAS cell-type name (case-insensitive substring), "
+                         "e.g. 'Pancreatic_Beta_Cell' or just 'beta'. "
+                         "Use --list to see all valid names.")
+    ap.add_argument("--list", nargs="?", const="", default=None, metavar="FILTER",
+                    help="list available CATLAS cell-type names (optionally "
+                         "filtered by a substring, e.g. --list pancrea) and exit")
     ap.add_argument("--size-cap", type=int, default=800)
     ap.add_argument("--top-n", type=int, default=25)
     ap.add_argument("--tau-min", type=float, default=0.90)
@@ -127,11 +182,49 @@ if __name__ == "__main__":
     ap.add_argument("--strict-links", action="store_true",
                     help="honest mode: 50kb link gate, no 0.5 imputation, "
                          "gene-linked candidates only in the ranked catalog")
+    ap.add_argument("--auto", metavar="FREE_TEXT", default=None,
+                    help="describe the cell type in plain words (e.g. --auto "
+                         "'liver hepatocyte'); Claude proposes + validates the "
+                         "config ONCE (cached to configs/generated/), resolves "
+                         "the CATLAS name, and runs. Requires a Claude Science kernel.")
+    ap.add_argument("--config", metavar="KEY", default=None,
+                    help="use a cached machine-generated config "
+                         "(configs/generated/<KEY>.json) instead of the curated "
+                         "sets — runs fully offline, no LLM call")
     a = ap.parse_args()
+    if a.list is not None:
+        list_cell_types(a.list or None)
+        sys.exit(0)
+
+    cfg = None
+    cell = a.cell_type
+    if a.auto:
+        import autoconfig as AC
+        try:
+            host  # noqa: F821  (Claude Science kernel injects this)
+        except NameError:
+            ap.error("--auto needs a Claude Science kernel (host.llm). Use a cached "
+                     "config with --config <key>, or pass an explicit cell_type.")
+        cfg = AC.generate_config(a.auto, host=host)  # noqa: F821
+        cell = cfg.get("catlas_match")
+        if not cell:
+            ap.error(f"--auto could not resolve '{a.auto}' to a CATLAS cell type.")
+        print(f"[auto] '{a.auto}' -> CATLAS '{cell}'  "
+              f"TFs={cfg['identity_tfs']}  markers={cfg['positive_controls']}")
+    elif a.config:
+        import autoconfig as AC
+        cfg = AC.load_generated(a.config)
+        if cfg is None:
+            ap.error(f"no cached config configs/generated/{a.config}.json")
+        cell = cell or cfg.get("catlas_match")
+
+    if not cell:
+        ap.error("cell_type is required (or use --auto '<text>' / --list)")
+
     if a.strict_links:
-        run(a.cell_type, size_cap=a.size_cap, top_n=a.top_n, tau_min=a.tau_min,
+        run(cell, size_cap=a.size_cap, top_n=a.top_n, tau_min=a.tau_min,
             fetch_seqs=not a.no_seqs, link_max_dist=50_000,
-            impute_unlinked=False, require_gene_link=True)
+            impute_unlinked=False, require_gene_link=True, config=cfg)
     else:
-        run(a.cell_type, size_cap=a.size_cap, top_n=a.top_n, tau_min=a.tau_min,
-            fetch_seqs=not a.no_seqs, link_max_dist=a.link_max_dist)
+        run(cell, size_cap=a.size_cap, top_n=a.top_n, tau_min=a.tau_min,
+            fetch_seqs=not a.no_seqs, link_max_dist=a.link_max_dist, config=cfg)

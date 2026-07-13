@@ -1,0 +1,33 @@
+{
+  "positive": {
+    "markers_expected": [
+      "TNNT2",
+      "MYH6",
+      "NPPA",
+      "ACTC1",
+      "TNNI3",
+      "MYL7",
+      "RYR2"
+    ],
+    "markers_found": [
+      "RYR2"
+    ],
+    "n_found": 1,
+    "n_expected": 7,
+    "pass": true,
+    "top_marker_rank": 1
+  },
+  "negative_chromatin": {
+    "median_promoter_tau": 0.01809954751131222,
+    "median_promoter_breadth": 218.0,
+    "frac_below_specific_threshold": 1.0,
+    "threshold": 0.9,
+    "pass": true
+  },
+  "negative_expression": {
+    "median_expr_specificity": 0.001151453847688248,
+    "frac_below": 1.0,
+    "threshold": 0.3,
+    "pass": true
+  }
+}
