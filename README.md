@@ -1,8 +1,10 @@
 # Can we computationally find — and pre-screen for cross-species translatability — tissue-specific AAV "on-switches" for the tissues where AAV actually matters?
 
 **Research track submission.** This is a research project answering a scientific
-question. The pipeline in this repository is the *method* we built to answer it;
-the answer is in the results.
+question. **OrthoGate** — the pipeline in this repository — is the *method* we
+built to answer it; the answer is in the results. (The name: it screens
+regulatory elements at the *ortholog* gate — does the target biology carry across
+species — before any wet-lab commitment.)
 
 ### The research question
 
